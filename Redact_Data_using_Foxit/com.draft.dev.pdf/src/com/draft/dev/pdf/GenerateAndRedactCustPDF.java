@@ -7,7 +7,6 @@ import com.foxit.sdk.pdf.PDFDoc;
 import com.foxit.sdk.pdf.PDFPage;
 import com.foxit.sdk.pdf.TextPage;
 import com.foxit.sdk.pdf.TextSearch;
-import com.foxit.sdk.pdf.annots.DefaultAppearance;
 import com.foxit.sdk.pdf.annots.Redact;
 import com.foxit.sdk.pdf.interform.Control;
 import com.foxit.sdk.pdf.interform.Field;
@@ -34,10 +33,13 @@ public class GenerateAndRedactCustPDF {
 	 */
 	public static void loadlib() {
 		String os = System.getProperty("os.name");
+		System.out.println(System.getProperty("java.library.path"));
 		if (os.toLowerCase().startsWith("win")) {
 			if (System.getProperty("sun.arch.data.model").equals("64")) {
+				System.out.println("in side if block 64");
 				System.loadLibrary("fsdk_java_win64");
 			} else {
+				System.out.println("in side if block 32");
 				System.loadLibrary("fsdk_java_win32");
 			}
 		} else {
@@ -55,8 +57,8 @@ public class GenerateAndRedactCustPDF {
 	public static boolean loadLicense() {
 		boolean licenseState = false;
 		// Initialize the library.
-		String sn = "T7j/Rad064vQ3pMnFs6NhyPNMyKtZ+cuITAt28sGmn12jEtdNe4zbw==";
-		String key = "8f0YFUGMvRkN+ddwhrBxubRv+38GzmILMFDAylEsKf8LJ6zGRC2G5OVn8FLVO7vEe3d8XxoPzOjFbXLya4rrL+46U94JomiPpWBxxU9Mo4wL3DHmO3EN9L44A8Yk8+J2HA26XRskvNIDPoeK8TKDYsNAZ4prIDTvjhGKH5iU2IVaVHO1uceS0NdBaCBftMDg5j2CgCk6p3gFpjEIq4Pvr1mJhEgR2ZLzia0IbrZxRf1Mjv8VCJr33vrJkLa16wlM+6N4NsDB1mIuex3xhnTAkMLfH90iZ+oHgAGzXGFEiPuKcbbkWVQT9SrGFKhZ1njO5TRFfGQBkueHLoeT12cRvKMFXVF5NbKAT37yhq64r1NOKeAHoEL0e8BGzdKeLzN469JJCiFo2ooX5I8L4uGCLXkAHKGYYNnXwtw01o4Iqh0lbCgLV1XFPX2s+O8K/gqsk/2DLlCc5hTYPyg+EPV/6j+kIi+rg6RNYXzNCcMwTKX2dmb6PszcFAA0unTrlySX8UlvZuAQJdhVyyT4HhkxBPSj9qDiEyMRbkjw/N9eM0YqL9XyLt/xzkDbDa5KNv6dker+AYD/ue0eLFO3/1qKJyk+zDS/9VTy5+qXt780SY6KSPXmmU7RWFOvamleMP29os9mnn8uAljhXw0VQl3JKYJNBycM6U2EzyEZ/xMZdJxvupjqE9Qtw1TPDGGIUixfC3pD0c8WpH4c4sflQlMtp/jKo7M55nJgKWEj0xnAaKyF1YCvZS8/CqVo8hSUubEt/moj6cZ0lDZUZj2t5YLyrQr7/83mGV5lWtlHvPBM1FGD+0QUCSNNnGF4azWYPOOZQ7sDNYYl6xQEJTiMxx1gXERH3EOOE/QrnrAjN/y0hVjsDHzPXelGN/vExF5n/qDT19+4cPK9MUz7gvw7rvPc8hpTNbfV5c1hrhUck25bYFP8+i3TIFLAY0VWY0br17yAKKMmgsZIKRq93jKFWMysrxY2F9NlUGIu/Hy0CIL4VYfTLkGw3mTHO84i+sd0sZ6os0qv2hETr0eFktXjzwLfVAnljfr/OlIi/rr4qupMfQvY6564tQGti+5xHiKRtM2Ro45EDwygHqVjR4AllWpTRWPfWp42r889lLMK8xlbuG9Sv11ykovaGW1uet55030cv6pXFMmrvk6VCGmWJ/e91dXqwxdn1ERhARpc1X18SUb+PP2Fx+qkaGLfIalP/4jUzDKUzUHnlJowjOw8nGvyGTxmIhbSiijcU0l5zDCIUbk04KwuDECg2YPntsdAelEmF3nE14xUnCDhBlcE1zzBjMGQn6yPZ34gTpHqOT6i+SEW8RM/6+I=";
+		String sn = "replace it with the trial serial number you received";
+		String key = "replace it with the trial key you received";
 		int error_code = Library.initialize(sn, key);
 		if (error_code != e_ErrSuccess)
 			licenseState = true;
