@@ -33,10 +33,13 @@ public class GenerateAndRedactCustPDF {
 	 */
 	public static void loadlib() {
 		String os = System.getProperty("os.name");
+		System.out.println(System.getProperty("java.library.path"));
 		if (os.toLowerCase().startsWith("win")) {
 			if (System.getProperty("sun.arch.data.model").equals("64")) {
+				System.out.println("in side if block 64");
 				System.loadLibrary("fsdk_java_win64");
 			} else {
+				System.out.println("in side if block 32");
 				System.loadLibrary("fsdk_java_win32");
 			}
 		} else {
