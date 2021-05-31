@@ -175,7 +175,7 @@ public class GenerateAndRedactCustPDF {
 				// Reset the apperance stream() and save the document. This will just have a red
 				// mark around the text
 				redact.resetAppearanceStream();
-				doc.saveAs("c:/temp/" + "AboutFoxit_redected_default.pdf", PDFDoc.e_SaveFlagNormal);
+				doc.saveAs("c:/temp/" + "AboutFoxit_redacted_default.pdf", PDFDoc.e_SaveFlagNormal);
 
 				// Set the border colours and fill colours and reset appearance stream. So the
 				// text is fully hidden.
@@ -190,7 +190,7 @@ public class GenerateAndRedactCustPDF {
 				// Reset the apperance stream() and save the document. This will hide the text
 				// using the fill colour red.
 				redact.resetAppearanceStream();
-				doc.saveAs("c:/temp/" + "AboutFoxit_redected_setColor.pdf", PDFDoc.e_SaveFlagNormal);
+				doc.saveAs("c:/temp/" + "AboutFoxit_redacted_setColor.pdf", PDFDoc.e_SaveFlagNormal);
 
 				// Change the opacity of the fill colour to half. So the Redacted text is still
 				// visible.
@@ -200,7 +200,7 @@ public class GenerateAndRedactCustPDF {
 				// save the document. This will hide the text using the fill colour red with
 				// opacity 0.5.Text will be visible.
 				redact.resetAppearanceStream();
-				doc.saveAs("c:/temp/" + "AboutFoxit_redected_setOpacity.pdf", PDFDoc.e_SaveFlagNormal);
+				doc.saveAs("c:/temp/" + "AboutFoxit_redacted_setOpacity.pdf", PDFDoc.e_SaveFlagNormal);
 
 				// Readaction.apply.
 				redaction.apply();
