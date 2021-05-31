@@ -67,6 +67,7 @@ public class CustomerPDFGenerator extends HttpServlet {
 		GenerateAndRedactCustPDF.loadLicense();
 		GenerateAndRedactCustPDF.createPDF("C:/temp/finalTest.pdf", request.getParameterMap());
 		GenerateAndRedactCustPDF.redactText("C:/temp/finalTest.pdf", "123456789");
+		response.sendRedirect("Success.html");
 		
 		
 	}
